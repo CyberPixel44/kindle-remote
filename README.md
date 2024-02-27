@@ -88,7 +88,7 @@ Before installing Koreader, you must install KUAL:
 - Download the latest Kindle package from this page.
 - Unzip the whole archive into the Kindle's USB root directory
 
-After installing Koreader, extract the contents of the `plugins` directory provided in this repository into the `koreader` folder of the Kindle found in the root of the Kindle. (koreader/plugins/httpremote.koplugin/...)
+After installing Koreader, extract the contents of the `plugins` directory provided in this repository into the `koreader` folder of the Kindle found in the root of the Kindle. (`koreader/plugins/httpremote.koplugin/...`)
 
 Once setup, you can find the plugin menu in the toolbar of Koreader. I suggest enabling autostart to start the listening server on the Kindle whenever turned on.
 Turn on WiFi from Koreader ONLY! If you turn on WiFi in the main OS, you may run the risk of updating your Kindle and losing your jailbreak.
@@ -138,6 +138,13 @@ If using the Arduino IDE,
 ### 3D Printed Enclosure
 To protect the ESP32 T-Lion from LILYGO, I designed 3D printable models that enclose the remote.
 The STL files can be found in this repository as `Remote Bottom.stl` and `Remote Top.stl`
+
+To print, simply slice them in slicing software such as [Aultimaker Cura](https://ultimaker.com/software/ultimaker-cura/) and print!
+Mounting the base is tricky:
+- WARNING: The remote DOES NOT SLIDE IN! You will damage some traces and resistors!!!
+1) Insert one of the edges directly into the groove from above such that the remote sits at an angle with one edge completely inside the groove and the other sticking out.
+2) Gently press down on the edge that is sticking out and pull back on the casing with your other hand to force the grooves around and on top of the other side.
+3) Adjust the forwards and backwards position to seat the board properly.
 
 
 # Usage
