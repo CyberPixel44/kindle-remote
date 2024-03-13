@@ -1,8 +1,9 @@
-# Kindle Remote Control
-A project that allows for wireless remote control of a Kindle e-reader running Koreader.
+# Kindle Accessibility Remote Control
+A project that allows for easy, low-latency wireless remote control of a Kindle e-reader running Koreader.
+This project was inspired by my lovely Grandfather, Dr. A.M.V. Reddy, who still loves to read books to this day!
 
 ## Acknowledgement
-Big thanks to user [bneo99](https://github.com/bneo99) for creating a base to create this project!
+Big thanks to user [bneo99](https://github.com/bneo99) for the base concept to build this project with!
 
 # Setup
 
@@ -99,6 +100,8 @@ Your Koreader should automatically connect to the KindleRemote access point, as 
 Any ESP32-based dev board that supports WiFi AP can be utilized for this project.
 [LILYGO's T-Lion board](https://www.lilygo.cc/products/t-lion) works great for this project, as it comes with a 5-way joystick and 18650 li-ion charging circuit which is ideal for remote operations.
 
+<img src="https://www.lilygo.cc/cdn/shop/products/T18-V2-LILYGO_1.png" height="300px">
+
 ### Flashing KindleWiFiRemote.ino
 If using the Arduino IDE,
 1. In your Arduino IDE, go to File > Preferences
@@ -106,7 +109,7 @@ If using the Arduino IDE,
 
    `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
 4. Open the Boards Manager: Go to Tools > Board > Boards Manager…
-5. Search for ESP32 and press install button for the “ESP32 by Espressif Systems“
+5. Search for ESP32 and press install button for the `“ESP32 by Espressif Systems“`
 6. Select your Board in Tools > Board menu
    - For the case of the T-Lion, use ESP32 Wrover Kit (all versions)
 7. Upload the code after selecting the COM port
@@ -139,9 +142,17 @@ If using the Arduino IDE,
 To protect the ESP32 T-Lion from LILYGO, I designed 3D printable models that enclose the remote.
 The STL files can be found in this repository as `Remote Bottom.stl` and `Remote Top.stl`
 
+<img src="https://github.com/CyberPixel44/kindle-remote/assets/37630423/aad30924-2d68-45ac-a939-52bdc9edc21d" height="500px">
+
 To print, simply slice them in slicing software such as [Aultimaker Cura](https://ultimaker.com/software/ultimaker-cura/) and print!
+
+<img src="https://github.com/CyberPixel44/kindle-remote/assets/37630423/4819bc8d-532a-47c1-bc22-a2758a8411d8" height="300px">
+<img src="https://github.com/CyberPixel44/kindle-remote/assets/37630423/7a153b57-17b4-4f1d-a70f-8143b27b96f9" height="300px">
+
+
 Mounting the base is tricky:
-- WARNING: The remote DOES NOT SLIDE IN! You will damage some traces and resistors!!!
+
+**⚠️ WARNING: The remote DOES NOT SLIDE IN! You will damage some traces and resistors!!!**
 1) Insert one of the edges directly into the groove from above such that the remote sits at an angle with one edge completely inside the groove and the other sticking out.
 2) Gently press down on the edge that is sticking out and pull back on the casing with your other hand to force the grooves around and on top of the other side.
 3) Adjust the forwards and backwards position to seat the board properly.
@@ -149,8 +160,8 @@ Mounting the base is tricky:
 
 # Usage
 
-1. Connect the Kindle to the Wi-Fi network named `KindleRemote` using the provided password.
-2. Open the Serial Monitor to view ESP32 status messages.
+1. Turn on ESP-Remote.
+2. Connect the Kindle to the Wi-Fi network named `KindleRemote` (or equivalent if changed).
 3. Press the corresponding buttons on your ESP32 to control the Kindle remotely:
 
    - Forward Button (`buttonPinForward`): Page forward.
@@ -159,7 +170,11 @@ Mounting the base is tricky:
    - Backward Button (`buttonPinBackward`): Page backward.
    - Up Button (`buttonPinUp`): Increase brightness.
 
+## Latency
+
+By viewing dynamic logs on Koreader, there is a ~20ms latency between when the button is pressed to when the page turn command is issued (wireless + software latency). However, same as with using the touchscreen, there is a considerable latency of ~200ms to ~600ms for the page to actually refresh due to e-ink hardware limitations of the Kindle itself!
+
 
 ## Disclaimer
 
-This script is provided as-is, and you should use it responsibly. Ensure that you have the necessary permissions to control your Kindle remotely. The script assumes a certain setup and may require adjustments based on your specific environment.
+This script is provided as-is, and you should use it responsibly. Ensure that you have the necessary permissions to control your Kindle remotely. The script assumes a certain setup and may require adjustments based on your specific environment. Jailbreaking your Kindle may void your warranty.
