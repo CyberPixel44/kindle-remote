@@ -100,7 +100,8 @@ Your Koreader should automatically connect to the KindleRemote access point, as 
 Any ESP32-based dev board that supports WiFi AP can be utilized for this project.
 [LILYGO's T-Lion board](https://www.lilygo.cc/products/t-lion) works great for this project, as it comes with a 5-way joystick and 18650 li-ion charging circuit which is ideal for remote operations.
 
-<img src="https://www.lilygo.cc/cdn/shop/products/T18-V2-LILYGO_1.png" height="300px">
+<img src="https://github.com/CyberPixel44/kindle-remote/assets/37630423/1c2b8f95-031a-4040-8cf8-03875385c29c" height="300px">
+
 
 ### Flashing KindleWiFiRemote.ino
 If using the Arduino IDE,
@@ -144,7 +145,7 @@ The STL files can be found in this repository as `Remote Bottom.stl` and `Remote
 
 <img src="https://github.com/CyberPixel44/kindle-remote/assets/37630423/aad30924-2d68-45ac-a939-52bdc9edc21d" height="500px">
 
-To print, simply slice them in slicing software such as [Aultimaker Cura](https://ultimaker.com/software/ultimaker-cura/) and print!
+To print, simply slice them in slicing software such as [Ultimaker Cura](https://ultimaker.com/software/ultimaker-cura/) and print!
 
 <img src="https://github.com/CyberPixel44/kindle-remote/assets/37630423/4819bc8d-532a-47c1-bc22-a2758a8411d8" height="300px">
 <img src="https://github.com/CyberPixel44/kindle-remote/assets/37630423/7a153b57-17b4-4f1d-a70f-8143b27b96f9" height="300px">
